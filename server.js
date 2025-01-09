@@ -8,6 +8,10 @@ const PORT = process.env.PORT || 3000;
 // dotenv configuration
 dotenv.config();
 
+//connection
+const connectDb = require('./config/db');
+connectDb();
+
 // middleware
 app.use(morgan('dev'));
 app.use(cors());
