@@ -1,4 +1,6 @@
 const userModel = require("../models/userModel");
+const bcrypt = require("bcryptjs");
+const JWT = require('jsonwebtoken');
 
 const registerController = async (req, res) => {
   try {
@@ -7,15 +9,19 @@ const registerController = async (req, res) => {
     if (!username || !email || !password || !address || !phone) {
       return res.status(400).send("All input is required");
     }
+    // check if user already exists
     const existing = await userModel.findOne({ email });
     if (existing) {
       return res.status(400).send("User already exists");
     }
+    // hash the password
+    var salt = bcrypt.genSaltSync(10);
+    const hashedPassword = await bcrypt.hashSync(password, salt);
     // create a new user
     const user = new userModel({
       username,
       email,
-      password,
+      password: hashedPassword,
       phone,
       address,
       userType,
@@ -35,11 +41,18 @@ const loginController = async (req, res) => {
     if (!email || !password) {
       return res.status(400).send("All input is required");
     }
-    const user = await userModel.findOne({ email: email, password: password });
+    const user = await userModel.findOne({ email });
     if (!user) {
-      return res.status(401).send("Invalid credentials");
+      return res.status(401).send("User Not Found !!");
     }
-    return res.status(200).send({ success: true, user, message: "Successfully logged in" });
+    // check if password is correct
+    const validPassword = await bcrypt.compare(password, user.password);
+    if (!validPassword) {
+      return res.status(401).send({ success: false, message: "Invalid Password" });
+    }
+    const token = JWT.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
+    user.password = undefined;
+    return res.status(200).send({ success: true, user, token, message: "Successfully logged in" });
   } catch (error) {
     return res.status(500).send(error.message);
   }
