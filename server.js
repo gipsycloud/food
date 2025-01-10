@@ -18,7 +18,8 @@ app.use(cors());
 app.use(express.json());
 
 // routes
-app.use('/api/v1/auth', require('./models/auth_Routes'));
+app.use('/api/v1/auth', require('./routes/auth_Routes'));
+app.use('/api/v1/user', require('./routes/userRoutes')); // 
 
 // route
 app.get('/', (req, res) => {
