@@ -17,6 +17,9 @@ app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());
 
+// routes
+app.use('/api/v1/auth', require('./models/auth_Routes'));
+
 // route
 app.get('/', (req, res) => {
   return res.status(200).send("Hello World");
