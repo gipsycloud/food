@@ -35,6 +35,10 @@ const userSchema = new mongoose.Schema({
   profile: {
     type: String,
     default: '../../public/profile.webp',
+  },
+  answer: {
+    type: String,
+    required: [true, 'Answer is required'],
   }
 }, { timestamps: true });
 
