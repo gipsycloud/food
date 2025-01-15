@@ -20,7 +20,8 @@ app.use(express.json());
 // routes
 app.use('/api/v1/auth', require('./routes/auth_Routes'));
 app.use('/api/v1/user', require('./routes/userRoutes')); // 
-app.use('/api/v1/restaurant', require('./routes/restaurantRoutes')); // 
+app.use('/api/v1/restaurant', require('./routes/restaurantRoutes')); //
+app.use('/api/v1/category', require('./routes/categoryRoutes'));
 
 // route
 app.get('/', (req, res) => {
