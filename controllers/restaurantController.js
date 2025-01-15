@@ -100,4 +100,30 @@ const getRestaurantByIdController = async (req, res) => {
     res.status(500).send("Failed to get restaurant by id");
   }
 };
-module.exports = { getAllRestaurantController, getRestaurantByIdController, createRestaurantController };
+
+const deleteRestaurantController = async (req, res) => {
+  try {
+    const restaurantId = req.params.id;
+    if (!restaurantId) {
+      return res.status(400).send({
+        success: false,
+        message: "Invalid restaurant id"
+      });
+    }
+    await restaurantModel.findByIdAndDelete(restaurantId);
+    res.status(200).send({
+      success: true,
+      message: "Restaurant deleted successfully"
+    });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Failed to delete restaurant");
+  }
+};
+
+module.exports = {
+  getAllRestaurantController,
+  getRestaurantByIdController,
+  createRestaurantController,
+  deleteRestaurantController
+};
