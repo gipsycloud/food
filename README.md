@@ -48,3 +48,5 @@ http://localhost:3000/api/v1/food/getall
 http://localhost:3000/api/v1/food/get/
 http://localhost:3000/api/v1/food/update/:id                   // put method
 
+### order
+http://localhost:3000/api/v1/food/placeorder                  // post method

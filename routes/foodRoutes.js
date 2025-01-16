@@ -7,7 +7,8 @@ const {
   getSingleFoodController,
   getFoodByRestaurantController,
   updateFoodController,
-  deleteFoodController } = require('../controllers/foodController');
+  deleteFoodController,
+  placeOrderController } = require('../controllers/foodController');
 //
 router.post('/create', authMiddleware, createFoodController);           //create food with post request
 router.get('/getall', getAllFoodController);                            //get all
@@ -15,5 +16,8 @@ router.get('/get/:id', getSingleFoodController);                        //get fo
 router.get('/getByRestaurant/:id', getFoodByRestaurantController);      //get food by id
 router.put('/update/:id', authMiddleware, updateFoodController);        //update food by id
 router.delete('/delete/:id', authMiddleware, deleteFoodController);
+
+// place order
+router.post('/placeorder', authMiddleware, placeOrderController);
 
 module.exports = router;

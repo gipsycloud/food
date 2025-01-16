@@ -1,4 +1,5 @@
 const foodModel = require('../models/foodModel');
+const orderModel = require('../models/orderModel');
 const { findById } = require('../models/userModel');
 const createFoodController = async (req, res) => {
   try {
@@ -165,11 +166,44 @@ const deleteFoodController = async (req, res) => {
   }
 };
 
+// order the food
+const placeOrderController = async (req, res) => {
+  try {
+    const { cart, payment } = req.body;
+    if (!cart || !payment) {
+      return res.status(500).send({
+        success: false,
+        message: "Cart and payment information are required"
+      })
+    };
+    // calculate
+    const totalprice = 0;
+    cart.map((i) => {
+      totalprice;
+
+    });
+    const newOrder = new orderModel({
+      food: cart,
+      payment: totalprice,
+      buyer: req.body.id,
+    });
+    res.status(200).send({
+      success: true,
+      message: "Order placed successfully",
+      order: newOrder
+    });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Failed to place order");
+  }
+}
+
 module.exports = {
   createFoodController,
   getAllFoodController,
   getSingleFoodController,
   getFoodByRestaurantController,
   updateFoodController,
-  deleteFoodController
+  deleteFoodController,
+  placeOrderController
 };
