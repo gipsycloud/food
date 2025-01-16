@@ -35,18 +35,32 @@ http://localhost:3000/api/v1/restaurant/get/id
 http://localhost:3000/api/v1/restaurant/delete/id
 
 #### category
+-- category get all || get method
 http://localhost:3000/api/v1/category/getall
-http://localhost:3000/api/v1/category/
+
+-- create category || create method
+http://localhost:3000/api/v1/category/create
+
+-- update category || update method
 http://localhost:3000/api/v1/category/update
+
+-- delete category || delete method
 http://localhost:3000/api/v1/category/delete
 
 
 ### food
 -- create food || post method
 http://localhost:3000/api/v1/food/create
+
+-- get all food || get method
 http://localhost:3000/api/v1/food/getall
-http://localhost:3000/api/v1/food/get/
-http://localhost:3000/api/v1/food/update/:id                   // put method
+
+-- get food by id || get method
+http://localhost:3000/api/v1/food/get/:id
+
+-- update food || update method
+http://localhost:3000/api/v1/food/update/:id
 
 ### order
-http://localhost:3000/api/v1/food/placeorder                  // post method
+-- order by food
+http://localhost:3000/api/v1/food/placeorder           
