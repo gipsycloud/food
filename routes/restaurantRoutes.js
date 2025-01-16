@@ -8,16 +8,9 @@ const {
 const router = express.Router();
 
 // routes
-// get all restaurant
-router.get('/getall', getAllRestaurantController);
-
-// get restaurant by id
-router.get('/get/:id', getRestaurantByIdController);
-
-// delete restaurant
-router.delete('/delete/:id', authMiddleware, deleteRestaurantController);
-
-// create restauant routes || post
-router.post('/create', authMiddleware, createRestaurantController);
+router.get('/getall', getAllRestaurantController);                               // get all restaurant
+router.get('/get/:id', getRestaurantByIdController);                             // get restaurant by id
+router.delete('/delete/:id', authMiddleware, deleteRestaurantController);        // delete restaurant
+router.post('/create', authMiddleware, createRestaurantController);              // create restauant routes || post
 
 module.exports = router;

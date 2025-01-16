@@ -10,19 +10,10 @@ const authMiddleware = require('../middlewares/authMiddleware');
 const router = express.Router();
 
 // routes
-// Get user routes
-router.get('/users', authMiddleware, getUserController);
-
-// update user routes
-router.put('/update', authMiddleware, updateUserController);
-
-// password update
-router.post('/updatePassword', authMiddleware, updatePasswordController);
-
-// reset password
-router.post('/resetPassword', authMiddleware, resetPasswordController);
-
-// delete user routes
-router.delete('/deleteUser/:id', authMiddleware, deleteProfileController);
+router.get('/users', authMiddleware, getUserController);                                // Get user routes
+router.put('/update', authMiddleware, updateUserController);                            // update user routes
+router.post('/updatePassword', authMiddleware, updatePasswordController);               // password update
+router.post('/resetPassword', authMiddleware, resetPasswordController);                 // reset password
+router.delete('/deleteUser/:id', authMiddleware, deleteProfileController);              // delete user routes
 
 module.exports = router;

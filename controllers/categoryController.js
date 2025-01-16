@@ -43,4 +43,54 @@ const getAllCategoryController = async (req, res) => {
   }
 };
 
-module.exports = { createCategoryController, getAllCategoryController };
+const updateCategoryController = async (req, res) => {
+  try {
+    const { id } = req.params;
+    console.log(req.body);
+    const { title, imgurl } = req.body;
+    const updateCategory = await categoryModel.findByIdAndUpdate(id, { title, imgurl }, { new: true });
+    if (!updateCategory) {
+      return res.status(404).send({
+        success: false,
+        message: "Category not found"
+      });
+    }
+    res.status(200).send({
+      success: true,
+      message: "Category updated successfully",
+      updatedCategory: updateCategory
+    });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send({
+      success: false,
+      err,
+      message: "Failed to update category"
+    });
+  }
+};
+
+const deleteCategoryController = async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (!id) {
+      return res.status(400).send({
+        success: false,
+        message: "Invalid category id"
+      });
+    }
+    const deleteCategory = await categoryModel.findByIdAndDelete(id);
+    res.status(200).send({
+      success: true,
+      message: "Category deleted successfully"
+    });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send({
+      success: false,
+      message: "Failed to delete category"
+    });
+  }
+};
+
+module.exports = { createCategoryController, getAllCategoryController, updateCategoryController, deleteCategoryController };
