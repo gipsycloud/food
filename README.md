@@ -15,7 +15,7 @@ http://localhost:3000/api/v1/user/updatePassword
 -- delete user account || delete method
 http://localhost:3000/api/v1/user/deleteUser/id
 
-// Get User
+-- get user account || get method
 http://localhost:3000/api/v1/user/users
 
 -- update user || put method
