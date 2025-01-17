@@ -169,24 +169,25 @@ const deleteFoodController = async (req, res) => {
 // order the food
 const placeOrderController = async (req, res) => {
   try {
-    const { cart, payment } = req.body;
-    if (!cart || !payment) {
+    const { cart } = req.body;
+    console.log(req.body);
+    if (!cart) {
       return res.status(500).send({
         success: false,
         message: "Cart and payment information are required"
       })
     };
     // calculate
-    const totalprice = 0;
+    let totalprice = 0;
     cart.map((i) => {
-      totalprice;
-
+      totalprice += i.price;
     });
     const newOrder = new orderModel({
-      food: cart,
+      foods: cart,
       payment: totalprice,
-      buyer: req.body.id,
+      buyer: req.body.id,   // from middlware line no 14
     });
+    await newOrder.save();
     res.status(200).send({
       success: true,
       message: "Order placed successfully",
