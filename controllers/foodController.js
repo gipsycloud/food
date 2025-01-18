@@ -199,6 +199,27 @@ const placeOrderController = async (req, res) => {
   }
 }
 
+// change order status
+const orderStatusController = async (req, res) => {
+  try {
+    const orderId = req.params.id;
+    console.log(orderId);
+
+    if (!orderId) {
+      return res.status(404).send("No order id provided");
+    }
+    const { status } = req.body;
+    const order = await orderModel.findByIdAndUpdate(orderId, { status });
+    res.status(200).send({
+      success: true,
+      message: "Order status updated successfully",
+      order
+    });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Failed to change order status");
+  }
+}
 module.exports = {
   createFoodController,
   getAllFoodController,
@@ -206,5 +227,6 @@ module.exports = {
   getFoodByRestaurantController,
   updateFoodController,
   deleteFoodController,
-  placeOrderController
+  placeOrderController,
+  orderStatusController
 };
