@@ -5,7 +5,7 @@ const userModel = require("../models/userModel");
 module.exports = async (req, res, next) => {
   try {
     const user = await userModel.findOne(req.body.id);
-    console.log(user.id)
+    console.log(user)
     if (user.userType !== "admin") {
       return res.status(401).send({
         message: "Only admin access is allowed",
