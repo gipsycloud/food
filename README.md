@@ -63,4 +63,5 @@ http://localhost:3000/api/v1/food/update/:id
 
 ### order
 -- order by food
-http://localhost:3000/api/v1/food/placeorder           
+http://localhost:3000/api/v1/food/placeorder
+http://localhost:3000/api/v1/food/orderstatus/:id      // order status update method from authorize user
