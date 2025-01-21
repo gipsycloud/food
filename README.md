@@ -1,69 +1,73 @@
 # food
 #### user
+### online api calls
+
 -- User Register
-http://localhost:3000/api/v1/auth/register
+http://elboy.ap-1.evennode.com/api/v1/auth/register
 
 -- User Login
-http://localhost:3000/api/v1/auth/login
+http://elboy.ap-1.evennode.com/api/v1/auth/login
 
 -- reset password || post method
-http://localhost:3000/api/v1/user/resetPassword
+http://elboy.ap-1.evennode.com/api/v1/user/resetPassword
 
 -- update password || post method
-http://localhost:3000/api/v1/user/updatePassword
+http://elboy.ap-1.evennode.com/api/v1/user/updatePassword
 
 -- delete user account || delete method
-http://localhost:3000/api/v1/user/deleteUser/id
+http://elboy.ap-1.evennode.com/api/v1/user/deleteUser/id
 
 -- get user account || get method
-http://localhost:3000/api/v1/user/users
+http://elboy.ap-1.evennode.com/api/v1/user/users
 
 -- update user || put method
-http://localhost:3000/api/v1/user/update
+http://elboy.ap-1.evennode.com/api/v1/user/update
 
 #### restaurant
 -- get all restaurant || get method
-http://localhost:3000/api/v1/restaurant/getall
+http://elboy.ap-1.evennode.com/api/v1/restaurant/getall
 
 -- get restaurant || get method
-http://localhost:3000/api/v1/restaurant/create
+http://elboy.ap-1.evennode.com/api/v1/restaurant/create
 
 -- post restaurant || post method
-http://localhost:3000/api/v1/restaurant/get/id
+http://elboy.ap-1.evennode.com/api/v1/restaurant/get/id
 
 -- delete restaurant || delete method
-http://localhost:3000/api/v1/restaurant/delete/id
+http://elboy.ap-1.evennode.com/api/v1/restaurant/delete/id
 
 #### category
 -- category get all || get method
-http://localhost:3000/api/v1/category/getall
+http://elboy.ap-1.evennode.com/api/v1/category/getall
 
 -- create category || create method
-http://localhost:3000/api/v1/category/create
+http://elboy.ap-1.evennode.com/api/v1/category/create
 
 -- update category || update method
-http://localhost:3000/api/v1/category/update
+http://elboy.ap-1.evennode.com/api/v1/category/update
 
 -- delete category || delete method
-http://localhost:3000/api/v1/category/delete
+http://elboy.ap-1.evennode.com/api/v1/category/delete
 
 
 ### food
 -- create food || post method
-http://localhost:3000/api/v1/food/create
+http://elboy.ap-1.evennode.com/api/v1/food/create
 
 -- get all food || get method
-http://localhost:3000/api/v1/food/getall
+http://elboy.ap-1.evennode.com/api/v1/food/getall
 
 -- get food by id || get method
-http://localhost:3000/api/v1/food/get/:id
+http://elboy.ap-1.evennode.com/api/v1/food/get/:id
 
 -- update food || update method
-http://localhost:3000/api/v1/food/update/:id
+http://elboy.ap-1.evennode.com/api/v1/food/update/:id
 
 ### order
 -- order by food
-http://localhost:3000/api/v1/food/placeorder
+http://elboy.ap-1.evennode.com/api/v1/food/placeorder
 
 -- order status update method from authorize user
-http://localhost:3000/api/v1/food/orderstatus/:id
+http://elboy.ap-1.evennode.com/api/v1/food/orderstatus/:id
+
+
