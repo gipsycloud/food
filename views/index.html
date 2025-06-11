@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>API Route Link</h2>
+
+    <ul>
+      <li><strong>User</strong>
+        <ul>
+          <li><strong>Online API Calls</strong>
+            <ul>
+              <li>User Register: <code>/api/v1/auth/register</code></li>
+              <li>User Login: <code>/api/v1/auth/login</code></li>
+              <li>Reset Password (POST): <code>/api/v1/user/resetPassword</code></li>
+              <li>Update Password (POST): <code>/api/v1/user/updatePassword</code></li>
+              <li>Delete User Account (DELETE): <code>/api/v1/user/deleteUser/id</code></li>
+              <li>Get User Account (GET): <code>/api/v1/user/users</code></li>
+              <li>Update User (PUT): <code>/api/v1/user/update</code></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><strong>Restaurant</strong>
+        <ul>
+          <li>Get All Restaurant (GET): <code>/api/v1/restaurant/getall</code></li>
+          <li>Get Restaurant (GET): <code>/api/v1/restaurant/create</code></li>
+          <li>Post Restaurant (POST): <code>/api/v1/restaurant/get/id</code></li>
+          <li>Delete Restaurant (DELETE): <code>/api/v1/restaurant/delete/id</code></li>
+        </ul>
+      </li>
+      <li><strong>Category</strong>
+        <ul>
+          <li>Get All (GET): <code>/api/v1/category/getall</code></li>
+          <li>Create (POST): <code>/api/v1/category/create</code></li>
+          <li>Update (PUT): <code>/api/v1/category/update</code></li>
+          <li>Delete (DELETE): <code>/api/v1/category/delete</code></li>
+        </ul>
+      </li>
+      <li><strong>Food</strong>
+        <ul>
+          <li>Create Food (POST): <code>/api/v1/food/create</code></li>
+          <li>Get All Food (GET): <code>/api/v1/food/getall</code></li>
+          <li>Get Food by ID (GET): <code>/api/v1/food/get/:id</code></li>
+          <li>Update Food (PUT): <code>/api/v1/food/update/:id</code></li>
+        </ul>
+      </li>
+      <li><strong>Order</strong>
+        <ul>
+          <li>Order by Food: <code>/api/v1/food/placeorder</code></li>
+          <li>Order Status Update (Authorized User): <code>/api/v1/food/orderstatus/:id</code></li>
+        </ul>
+      </li>
+    </ul>
+
+
+</body>
+</html>

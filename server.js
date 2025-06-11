@@ -26,7 +26,8 @@ app.use('/api/v1/food', require('./routes/foodRoutes'));
 
 // route
 app.get('/', (req, res) => {
-  return res.status(200).send("Hello World");
+  // return res.status(200).send("Hello World");
+  res.sendFile(__dirname + '/views/index.html');
 });
 
 var ProgressBar = require('./progressbar.js');
