@@ -1,73 +1,76 @@
 # food
+
 #### user
+
 ### online api calls
 
 -- User Register
-http://elboy.ap-1.evennode.com/api/v1/auth/register
+/api/v1/auth/register
 
 -- User Login
-http://elboy.ap-1.evennode.com/api/v1/auth/login
+/api/v1/auth/login
 
 -- reset password || post method
-http://elboy.ap-1.evennode.com/api/v1/user/resetPassword
+/api/v1/user/resetPassword
 
 -- update password || post method
-http://elboy.ap-1.evennode.com/api/v1/user/updatePassword
+/api/v1/user/updatePassword
 
 -- delete user account || delete method
-http://elboy.ap-1.evennode.com/api/v1/user/deleteUser/id
+/api/v1/user/deleteUser/id
 
 -- get user account || get method
-http://elboy.ap-1.evennode.com/api/v1/user/users
+/api/v1/user/users
 
 -- update user || put method
-http://elboy.ap-1.evennode.com/api/v1/user/update
+/api/v1/user/update
 
 #### restaurant
+
 -- get all restaurant || get method
-http://elboy.ap-1.evennode.com/api/v1/restaurant/getall
+/api/v1/restaurant/getall
 
 -- get restaurant || get method
-http://elboy.ap-1.evennode.com/api/v1/restaurant/create
+/api/v1/restaurant/create
 
 -- post restaurant || post method
-http://elboy.ap-1.evennode.com/api/v1/restaurant/get/id
+/api/v1/restaurant/get/id
 
 -- delete restaurant || delete method
-http://elboy.ap-1.evennode.com/api/v1/restaurant/delete/id
+/api/v1/restaurant/delete/id
 
 #### category
+
 -- category get all || get method
-http://elboy.ap-1.evennode.com/api/v1/category/getall
+/api/v1/category/getall
 
 -- create category || create method
-http://elboy.ap-1.evennode.com/api/v1/category/create
+/api/v1/category/create
 
 -- update category || update method
-http://elboy.ap-1.evennode.com/api/v1/category/update
+/api/v1/category/update
 
 -- delete category || delete method
-http://elboy.ap-1.evennode.com/api/v1/category/delete
-
+/api/v1/category/delete
 
 ### food
+
 -- create food || post method
-http://elboy.ap-1.evennode.com/api/v1/food/create
+/api/v1/food/create
 
 -- get all food || get method
-http://elboy.ap-1.evennode.com/api/v1/food/getall
+/api/v1/food/getall
 
 -- get food by id || get method
-http://elboy.ap-1.evennode.com/api/v1/food/get/:id
+/api/v1/food/get/:id
 
 -- update food || update method
-http://elboy.ap-1.evennode.com/api/v1/food/update/:id
+/api/v1/food/update/:id
 
 ### order
+
 -- order by food
-http://elboy.ap-1.evennode.com/api/v1/food/placeorder
+/api/v1/food/placeorder
 
 -- order status update method from authorize user
-http://elboy.ap-1.evennode.com/api/v1/food/orderstatus/:id
-
-
+/api/v1/food/orderstatus/:id
